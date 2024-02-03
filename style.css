@@ -540,7 +540,7 @@ hr{
 }
 .layer:hover{
     background:rgba(226,0,0.7);
-    opacity: 0.4;
+    opacity: 0.1;
 }
 .layer h3{
     width: 100%;
@@ -607,4 +607,32 @@ hr{
     right: 10px;
 }
 
-/* Additional styles for the section if needed */
+/* Application */
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.upload-btn-wrapper .btn:hover {
+    border-color: black;
+}
