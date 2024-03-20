@@ -352,57 +352,69 @@ h3{
 /* footer*/
 footer {
     width: 100%;
+    position: absolute;
+    bottom: 0;
     background: linear-gradient(rgba(0, 14, 67, 0.7), rgba(7, 25, 104, 0.7));
     color: #fff;
-    padding: 50px 0;
-    border-top-left-radius: 50px;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
     font-size: 14px;
-    overflow-x: hidden;
-
+    line-height: 20px;
 }
-.footer-content{
+
+.rowz{
     width:95% ;
     margin: auto;
     display: flex;
-    justify-content:space-between;
+    flex-wrap:wrap;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
-.footer-section{
+.colz{
     flex-basis: 25%;
     padding: 10px;
 }
-.footer-section:nth-child(2), .footer-section:nth-child(3){
-     flex-basis: 15%;
-}
-.logo{
+
+.logof {
     width: 200px;
-    height: auto;
-    margin-bottom: auto;
-}
-.footer-content h3{
-    width: fit-content;
-    margin-bottom: 5px;
-    position: relative;
-}
-.email-id{
-    width: fit-content;
+    margin-bottom: 30px;
 }
 
+.colz h3{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
 ul li{
-    font-style: none;
-    margin-bottom: 10px;
-    color: #fff;
+    list-style: none;
+    margin-bottom: 12px;
 }
 ul li a{
     text-decoration: none;
     color: white;
 }
-.footer-section, a{
-    color: white;
+
+a.Address {
+    /* Your styling properties here */
+    color: white; /* Example color */
+    text-decoration: none; /* Example text decoration */
 }
+a.Address:hover {
+    text-decoration: underline; /* Underline effect on hover */
+}
+
 form {
-    width: 300px; /* Adjust the width as needed */
+    max-width: 300px; /* Adjust the width as needed */
     margin: 0 auto; /* Center the form */
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+}
+
+.form-cont{
+    display: flex;
 }
 
 label {
@@ -419,6 +431,7 @@ textarea {
     padding: 5px;
     margin-bottom: 10px;
     box-sizing: border-box; /* Ensure padding and border are included in the width */
+    resize: none;
 }
 
 input[type="submit"] {
@@ -437,12 +450,12 @@ input[type="submit"]:hover {
     background: #7e0a02;
     transition: 1s;
 }
+
 hr{
     width:90% ;
     border: 0;
+    border-bottom: 1px solid #ccc;
     margin: 20px auto;
-
-
 }
 .social-icons {
     margin-top: 10px;
@@ -467,36 +480,48 @@ hr{
     margin-top: 10px;
     margin-bottom: 1px;
 }
+
+.underline{
+    width: 100%;
+    height: 5px;
+    background: white;
+    border-radius: 3px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+}
+.underline span{
+    width: 15px;
+    height: 100%;
+    background: #7e0a02;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+}
+
+@keyframes moving{
+    0%{
+        left:-20px;
+    }
+    100%{
+        left:100%;
+    }
+}
+
 @media(max-width: 700px) {
     footer {
-        padding: 50px 0 100px; /* Increase bottom padding to accommodate the footer content */
+        bottom: unset;
     }
-    .footer-content {
-        flex-wrap: wrap; /* Allow footer content to wrap to the next line */
-        justify-content: center; /* Center align content */
-    }
+    .colz{
+        flex-basis: 100%;
 
-    .footer-section {
-        flex-basis: 100%; /* Set the width to 100% for smaller screens */
-        margin-bottom: 20px; /* Increase margin between footer sections */
-        text-align: center; /* Center align text */
     }
-
-    .footer-section:nth-child(2),
-    .footer-section:nth-child(3) {
-        flex-basis: 50%; /* Set the width to 50% for smaller screens */
-        text-align: left; /* Left align text */
-    }
-
-    .footer-section h3 {
-        margin-bottom: 10px; /* Adjust margin for heading */
-        text-align:center; /* Center align "Contact Us" heading */
-    }
-
-    .footer-section .email-id,
-    .footer-section ul {
-        text-align: center; /* Center align contact information and list */
-        margin-left: 0; /* Reset margin for the email-id and ul */
+    .rowz {
+        flex-direction: column; /* Change layout to column on smaller screens */
+        align-items: flex-start;
     }
 }
 
